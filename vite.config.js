@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://gtz123456.github.io/FuckfirewallVPN_vue/',
+  base: '/FuckfirewallVPN_vue/',
   plugins: [
     vue(),
   ],
