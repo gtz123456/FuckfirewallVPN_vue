@@ -8,7 +8,7 @@
 
 
   /* adjust background position */
-  var ratio = 0.4;
+  var ratio = 0.6;
   let positionY1 = ref(0);
   let positionY2 = ref(0);
   let positionY3 = ref(0);
