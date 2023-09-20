@@ -72,16 +72,15 @@
               <div class="text-title">Firewall VPN</div>
               <div class="text-desc">An easy-to-use VPN with multiple platforms support</div>
               <div class="text-desc">Windows, macOS, Linux, Android, iOS</div>
-              <button class="download" @click="download">Download {{ os }}
-              </button>
+              <button class="download" @click="download">Download {{ os }}</button>
           </div>
-      </section>
+        </section>
 
         <section class="box" :style="{background: 'url('+block2+')', 'background-position-y':positionY2+'px'}">
             <div class="box-block"></div>
             <div class="box-text">
                 <div class="text-title">Secure Internet connection</div>
-                <div class="text-desc">Establish secure Internet connection with 1000Mbps high speed</div>
+                <div class="text-desc">Establish secure Internet connection with 1000 Mbps high speed</div>
             </div>
         </section>
 
@@ -98,6 +97,19 @@
             <div class="box-text">
                 <div class="text-title">Choose your best plan</div>
                 <div class="text-desc">We offer multiple plans</div>
+                  <div class="plans">
+                    <div class="plan">
+                      <div class="price"> 10RMB/month </div>
+                      <div> Unlimited data </div>
+                      <div> 1000 Mbps high speed</div>
+                    </div>
+
+                    <div class="plan">
+                      <div class="price"> 100RMB/year </div>
+                      <div> Unlimited data </div>
+                      <div> 1000 Mbps high speed</div>
+                    </div>
+                  </div>
             </div>
         </section>
       </div>
@@ -154,7 +166,7 @@
   /* set text style */
   .box-text .text-title {
       font-size: 34px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
   }
 
   .box-text .text-desc {
@@ -168,18 +180,48 @@
     position: relative;
     display: flex;
     padding: 10px 20px;
-    background-color: #3498db;
+    margin: 30px;
+    background-color: rgb(113, 168, 240);
     color: #fff;
     text-decoration: none;
     border: none;
     height: 60px;
     border-radius: 30px;
     font-size: 16px;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
   }
 
   .download:hover {
-    background-color: #2980b9;
+    background-color: rgba(70, 141, 233, 0.849);
+    transform: scale(1.03);
   }
 
+  .plans {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 25px;
+  }
+
+  .plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(113, 240, 181, 0.1);
+    transition: 0.5s ease;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1),
+                -4px 4px 20px rgba(0, 0, 0, 0.1),
+                4px -4px 20px rgba(0, 0, 0, 0.1),
+                -4px -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .plan:hover {
+    background-color: rgba(113, 240, 181, 0.2);
+    transform: scale(1.05);
+  }
 </style>

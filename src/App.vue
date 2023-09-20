@@ -15,6 +15,7 @@ import Avatar from '@/assets/avatar.png'
     <nav>
       <RouterLink to="/" class="page">Home</RouterLink>
       <RouterLink to="about" class="page">About</RouterLink>
+      <RouterLink to="login" class="page">Login</RouterLink>
     </nav>
   </div>
   <RouterView />
@@ -32,7 +33,7 @@ import Avatar from '@/assets/avatar.png'
     height: 40px;
     margin: 0px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.82);
+    background-color: rgba(255, 255, 255, 0.72);
     /* stick to top */
     position: fixed; 
     top: 0px;
