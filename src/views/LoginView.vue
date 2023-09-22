@@ -1,9 +1,11 @@
 <script setup>
   import { ref } from 'vue';
   import axios from 'axios';
+  import router from "@/router";
 
   import block1 from '@/assets/block1.jpg'
-
+  const apiURI = 'http://lv.fuckfirewall.top/api/tokens'
+  const apiURI1 = 'http://localhost:5000/api/tokens'
   const email = ref('');
   const password = ref('');
   var token = null;
@@ -12,22 +14,25 @@
     console.log(email, password);
     console.log('Login:', email.value, password.value);
     try {
-      const response = await axios.post('http://localhost:5000/api/tokens', null, {
+      const data = {
         auth: {
-          email: email.value,
+          username: email.value,
           password: password.value
         }
-      });
+      }
+      const response = await axios.post(apiURI, null, data);
 
       if (response.status === 200) {
         token = response.data.token;
+        localStorage.setItem('token', token)
+        router.push('/dashboard')
         console.log('Token:', token);
       } else {
-        console.error('Login failed');
+        alert('Login failed');
       }
     }
     catch (error) {
-      console.error('Error:', error);
+      alert('Error:', error);
     }
   }
 
@@ -59,28 +64,19 @@
 
 
 <style>
-  h2 {
-    color: rgba(109, 219, 142, 0.99);
-    font-size: 30px;
-    font-weight: 500;
-  }
-
   .box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
   }
 
   .form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 40px;
     margin: 40px;
@@ -92,6 +88,12 @@
                 -4px 4px 20px rgba(0, 0, 0, 0.1),
                 4px -4px 20px rgba(0, 0, 0, 0.1),
                 -4px -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    color: rgba(109, 219, 142, 0.99);
+    font-size: 30px;
+    font-weight: 500;
   }
 
   .input {
