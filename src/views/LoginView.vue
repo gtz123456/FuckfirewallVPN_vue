@@ -5,7 +5,6 @@
 
   import block1 from '@/assets/block1.jpg'
   const apiURI = 'https://lv.fuckfirewall.top/api/tokens'
-  const apiURI1 = 'http://localhost:5000/api/tokens'
   const email = ref('');
   const password = ref('');
   var token = null;
@@ -20,7 +19,7 @@
           password: password.value
         }
       }
-      const response = await axios.post(apiURI1, null, data);
+      const response = await axios.post(apiURI, null, data);
 
       if (response.status === 200) {
         token = response.data.token;
