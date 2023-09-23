@@ -6,7 +6,7 @@
   import block1 from '@/assets/block1.jpg'
 
   var token = localStorage.getItem('token');
-  const apiURI1 = 'http://lv.fuckfirewall.top/api/config';
+  const apiURI1 = 'https://lv.fuckfirewall.top/api/config';
   const userData = ref(null);
 
   async function getUserData() {
