@@ -4,7 +4,7 @@
   import router from "@/router";
 
   import block1 from '@/assets/block1.jpg'
-  const apiURI = 'https://lv.fuckfirewall.top/api/tokens'
+  const apiURI = 'https://lv.fuckfirewall.top/api/'
   const email = ref('');
   const password = ref('');
   var token = null;
@@ -19,7 +19,7 @@
           password: password.value
         }
       }
-      const response = await axios.post(apiURI, null, data);
+      const response = await axios.post(apiURI + 'tokens', null, data);
 
       if (response.status === 200) {
         token = response.data.token;
@@ -35,6 +35,27 @@
     }
   }
 
+  async function userRegister() {
+    try {
+      const data = {
+        email: email,
+        password: password,
+        refer: 0
+      };
+      const response = await axios.post(apiURI + 'register', null, data);
+
+      if (response.status === 200) {
+        const result = response.data.result;
+        console.log('Registration result:', result);
+        // Handle registration result as needed
+      } else {
+        alert('Registration failed');
+      }
+    }
+    catch (error) {
+      alert('Error during registration:', error);
+    }
+  }
 </script>
 
 <template>

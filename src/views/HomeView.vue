@@ -35,7 +35,7 @@
 
   /* detect OS and download the corresponding client */
   function download(){
-    var link = 'https://github.com/gtz123456/FuckfirewallVPN_Client/releases/download/v0%2C31/client';
+    var link = 'https://github.com/gtz123456/FuckfirewallVPN_Client/releases/download/v0.32/client';
     if (os == 'Windows') link += '.exe';
     else if (os == 'maxOS') link += '.dmg';
     window.open(link,"_blank")
