@@ -4,7 +4,7 @@
   import router from "@/router";
 
   import block1 from '@/assets/block1.jpg'
-  const apiURI = 'https://lv.fuckfirewall.top/api/'
+  const apiURI = 'http://74.48.114.64:8000/api/'
   const email = ref('');
   const password = ref('');
   var token = null;
@@ -42,7 +42,7 @@
         password: password,
         refer: 0
       };
-      const response = await axios.post(apiURI + 'register', null, data);
+      const response = await axios.post(apiURI + 'register', data);
 
       if (response.status === 200) {
         const result = response.data.result;

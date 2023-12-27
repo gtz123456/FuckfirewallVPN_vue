@@ -35,9 +35,10 @@
 
   /* detect OS and download the corresponding client */
   function download(){
-    var link = 'https://github.com/gtz123456/FuckfirewallVPN_Client/releases/download/v0.32/client';
+    var link = 'https://github.com/gtz123456/FuckfirewallVPN_Client/releases/download/v0.33/client';
     if (os == 'Windows') link += '.exe';
     else if (os == 'maxOS') link += '.dmg';
+    else {alert("Currently not supported OS."); return;}
     window.open(link,"_blank")
   }
 
@@ -108,6 +109,12 @@
                       <div class="price"> 100RMB/year </div>
                       <div> Unlimited data </div>
                       <div> 1000 Mbps high speed</div>
+                    </div>
+
+                    <div class="plan">
+                      <div class="price"> Starts from 200RMB/year </div>
+                      <div> Custimized plan </div>
+                      <div> Exclusive 1000 Mbps high speed</div>
                     </div>
                   </div>
             </div>
