@@ -8,8 +8,7 @@
   import { ApplicationMenu, User, Shopping } from '@icon-park/vue-next';
 
   var token = localStorage.getItem('token');
-  //const apiURI = 'http://' + location.host + ':8000/api/';
-  const apiURI = 'http://157.254.221.132:8000/api/'
+  const apiURI = '/api'
   const userData = ref(null);
   
   let currentPage = ref('Status');

@@ -4,8 +4,7 @@
   import router from "@/router";
 
   import block1 from '@/assets/block1.jpg'
-  //const apiURI = 'http://' + location.host + ':8000/api/';
-  const apiURI = 'http://157.254.221.132:8000/api/'
+  const apiURI = '/api'
   const email = ref('');
   const password = ref('');
   var token = null;
