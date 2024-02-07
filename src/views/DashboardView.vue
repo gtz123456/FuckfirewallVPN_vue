@@ -52,11 +52,12 @@
           userData.value = response.data;
         }
         else {
-          alert('Login failed');
+          router.push('/login')
         }
       }
       catch (error) {
         alert('Error:', error);
+        router.push('/login')
       }
     }
     else {
@@ -64,24 +65,11 @@
     }
   }
 
-  function unsecuredCopyToClipboard(text) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      document.execCommand('copy');
-    } catch (err) {
-      console.error('Unable to copy to clipboard', err);
-    }
-    document.body.removeChild(textArea);
-  }
-
   async function copyToClipboard(key, value) {
     try {
-      // await navigator.clipboard.writeText(value); this doesn't work for http
-      unsecuredCopyToClipboard(value);
+      await navigator.clipboard.writeText(value); 
+      // this doesn't work for http 
+      // https://stackoverflow.com/questions/71873824/copy-text-to-clipboard-cannot-read-properties-of-undefined-reading-writetext
       ElMessage({ message: 'Successfully copied ' + key, type: 'success' });
     } catch (err) {
       ElMessage({ message: 'failed to copy ' + key + err, type: 'warning' });
