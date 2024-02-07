@@ -4,7 +4,7 @@
   import router from "@/router";
 
   import block1 from '@/assets/block1.jpg'
-  const apiURI = '/api'
+  const apiURI = '/api/'
   const email = ref('');
   const password = ref('');
   var token = null;

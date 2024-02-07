@@ -8,7 +8,7 @@
   import { ApplicationMenu, User, Shopping } from '@icon-park/vue-next';
 
   var token = localStorage.getItem('token');
-  const apiURI = '/api'
+  const apiURI = '/api/'
   const userData = ref(null);
   
   let currentPage = ref('Status');
@@ -69,7 +69,7 @@
       await navigator.clipboard.writeText(value);
       ElMessage({ message: 'Successfully copied ' + key, type: 'success' });
     } catch (err) {
-      ElMessage({ message: 'failed to copy ' + key, type: 'warning' });
+      ElMessage({ message: 'failed to copy ' + key + err, type: 'warning' });
     }
   }
 
